@@ -6,12 +6,12 @@
   <link rel="icon" type="image/svg+xml" href="./assets/favicon-Bs_r76O8.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>INVESTOR | FluentFast</title>
-  <link rel="preload" href="./assets/logo-BFME71Cn.png" as="image" fetchpriority="high" />
+  <link rel="preload" href="./Koalas_flying.json" as="fetch" type="application/json" crossorigin="anonymous" />
   <link rel="preload" href="./assets/brand3-BU96RFG6.jpg" as="image" fetchpriority="high" />
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
-  <script type="module" crossorigin src="./assets/index-BEZcb7uT.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CvG-loMO.css">
+  <script type="module" crossorigin src="./assets/index-CisuBEmc.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-bGRU6cK-.css">
 </head>
 
 <body>
@@ -20,7 +20,9 @@
   <div class="container">
     <header style="position: relative;">
       <div class="brand-header">
-        <img class="header-top-logo" src="./assets/logo-BFME71Cn.png" alt="FluentFast Logo" style="object-fit: contain;">
+        <div id="hero-lottie" class="header-lottie-koala floating">
+          <!-- Lottie injects SVG here natively -->
+        </div>
         <div class="brand-text">
           <span class="fluent">FLUENT</span><span class="fast">FAST</span>
         </div>
@@ -836,7 +838,16 @@
       btn.addEventListener('mouseenter', playHoverSound);
     });
 
-    // Lottie removed as requested.
+    // 4. Lottie Animations Integration
+    if (document.getElementById('hero-lottie')) {
+      lottie.loadAnimation({
+        container: document.getElementById('hero-lottie'),
+        renderer: 'canvas',
+        loop: true,
+        autoplay: true,
+        path: './Koalas_flying.json' // Correct Vite path
+      });
+    }
 
   </script>
 </body>
